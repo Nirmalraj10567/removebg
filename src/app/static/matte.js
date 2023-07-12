@@ -31,7 +31,7 @@ Vue.component('train', {
         document.getElementById('logTxt').textContent = message.data;
     },
     submitFiles() {
-        this.ws = new WebSocket("ws://"+window.location.host+"/ws");
+        this.ws = new WebSocket("wss://"+window.location.host+"/ws");
         this.ws.onmessage = this.handleEvent;
 
         let formData = new FormData();
