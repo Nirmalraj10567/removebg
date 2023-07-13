@@ -10,7 +10,7 @@ app = FastAPI()
 container=Bootstapper().bootstrap()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.websocket("/ws")
+@app.websocket("/wss")
 async def websocket_endpoint(websocket: WebSocket, ws_manager: WebSocketManager = Injects(WebSocketManager)):
     await websocket.accept()
     await ws_manager.add(websocket)
